@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slide-close-enter-active,
+.slide-close-enter-active,
+.slide-open-enter-active,
+.slide-open-leave-active {
+    transition: all 0.25s ease-out;
+}
+
+.slide-open-enter-to {
+    position: absolute;
+    right: 0;
+}
+
+
+.slide-open-enter-from {
+    position: absolute;
+    right: -100%;
+}
+
+
+.slide-open-leave-to {
+    position: absolute;
+    left: -100%;
+}
+
+
+.slide-open-leave-from {
+    position: absolute;
+    left: 0;
+}
+
+/* close */
+.slide-close-enter-to {
+    position: absolute;
+    right: 0;
+}
+
+
+.slide-close-enter-from {
+    position: absolute;
+    right: 100%;
+}
+
+
+.slide-close-leave-to {
+    position: absolute;
+    left: 100%;
+}
+
+
+.slide-close-leave-from {
+    position: absolute;
+    left: 0;
+}
