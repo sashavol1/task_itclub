@@ -1,13 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import "./index.css"
-import makeServer from "./server.js";
+import { MockServer } from "./server";
 
-if (
-    import.meta.env.DEV &&
-    typeof makeServer === "function"
-) {
-    makeServer();
+if (import.meta.env.DEV) {
+    MockServer();
 }
 
 createApp(App).mount('#app')

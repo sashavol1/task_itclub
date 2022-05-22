@@ -1,5 +1,4 @@
 <template>
-  {{ transitionName }}
   <transition :name="transitionName">
     <make-payment
       v-if="showMakePayment"
