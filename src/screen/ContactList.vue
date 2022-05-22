@@ -4,7 +4,7 @@
       <div
         class="container flex flex-wrap justify-between items-center mx-auto"
       >
-        <button @click="$emit('handlerBack')">
+        <button @click="this.$router.push({ name: 'Payment' })">
           <svg
             class="mr-3 h-6 sm:h-9"
             version="1.1"
@@ -49,7 +49,7 @@
         <button
           type="button"
           class="inline-flex items-center text-sm text-gray-500 rounded-lg"
-          @click="$emit('handlerAddContact')"
+          @click="this.$router.push({ name: 'ContactAdd' })"
         >
           <svg
             class="mr-3 h-6 sm:h-9"
@@ -110,7 +110,7 @@
           space-y-0 space-x-6
           mb-5
         "
-        @click="picked(contact)"
+        @click="this.$router.push({ name: 'Payment', params: { ...contact } })"
       >
         <img
           class="block mx-auto h-24 rounded-full mx-0 shrink-0"

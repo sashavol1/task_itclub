@@ -4,7 +4,7 @@
       <div
         class="container flex flex-wrap justify-between items-center mx-auto"
       >
-        <button @click="$emit('handlerBack')">
+        <button @click="this.$router.push({ name: 'Contact' })">
           <svg
             class="mr-3 h-6 sm:h-9"
             version="1.1"

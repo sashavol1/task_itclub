@@ -8,7 +8,7 @@
             >Select contact</span
           >
           <input
-            @click="$emit('handlerSelect')"
+            @click="this.$router.push({ name: 'Contact' })"
             type="text"
             v-model="contact"
             class="
@@ -95,6 +95,18 @@ export default {
     contact: {
       type: String,
     },
+  },
+
+  data() {
+    return {
+      contact: "",
+    };
+  },
+
+  created() {
+    if (this.$route.params) {
+      this.contact = this.$route.params.first_name;
+    }
   },
 };
 </script>
