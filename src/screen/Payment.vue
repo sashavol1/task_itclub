@@ -90,13 +90,6 @@
 
 <script>
 export default {
-  emits: ["handlerSelect"],
-  props: {
-    contact: {
-      type: String,
-    },
-  },
-
   data() {
     return {
       contact: "",

@@ -1,9 +1,7 @@
 <template>
-  <div class="container mx-auto bg-white">
+  <div class="container mx-auto bg-white min-h-screen">
     <nav class="bg-teal-400 px-2 sm:px-4 py-2.5 mb-5">
-      <div
-        class="container flex flex-wrap justify-between items-center mx-auto"
-      >
+      <div class="flex flex-wrap justify-between items-center mx-auto">
         <button @click="this.$router.push({ name: 'Contact' })">
           <svg
             class="mr-3 h-6 sm:h-9"
@@ -50,69 +48,84 @@
       </div>
     </nav>
 
-    <div class="block w-full min-h-screen p-4">
-      <label class="block mb-3">
-        <span class="block text-sm font-medium text-slate-700">First name</span>
-        <input
-          type="text"
-          class="
-            mt-1
-            block
-            w-full
-            px-3
-            py-3
-            border border-slate-300
-            text-sm
-            shadow-sm
-            placeholder-slate-400
-            focus:outline-none focus:border-sky-500 focus:ring-1
-          "
-        />
-      </label>
-      <label class="block mb-3">
-        <span class="block text-sm font-medium text-slate-700">Last name</span>
-        <input
-          type="text"
-          class="
-            mt-1
-            block
-            w-full
-            px-3
-            py-3
-            border border-slate-300
-            text-sm
-            shadow-sm
-            placeholder-slate-400
-            focus:outline-none focus:border-sky-500 focus:ring-1
-          "
-        />
-      </label>
-      <label class="block mb-3">
-        <span class="block text-sm font-medium text-slate-700">Email</span>
-        <input
-          type="text"
-          class="
-            mt-1
-            block
-            w-full
-            px-3
-            py-3
-            border border-slate-300
-            text-sm
-            shadow-sm
-            placeholder-slate-400
-            focus:outline-none focus:border-sky-500 focus:ring-1
-          "
-        />
-      </label>
+    <div class="flex flex-col justify-between p-4">
+      <div class="block w-full min-h-fit">
+        <label class="block mb-3">
+          <span class="block text-sm font-medium text-slate-700"
+            >First name</span
+          >
+          <input
+            type="text"
+            class="
+              mt-1
+              block
+              w-full
+              px-3
+              py-3
+              border border-slate-300
+              text-sm
+              shadow-sm
+              placeholder-slate-400
+              focus:outline-none focus:border-sky-500 focus:ring-1
+            "
+          />
+        </label>
+        <label class="block mb-3">
+          <span class="block text-sm font-medium text-slate-700"
+            >Last name</span
+          >
+          <input
+            type="text"
+            class="
+              mt-1
+              block
+              w-full
+              px-3
+              py-3
+              border border-slate-300
+              text-sm
+              shadow-sm
+              placeholder-slate-400
+              focus:outline-none focus:border-sky-500 focus:ring-1
+            "
+          />
+        </label>
+        <label class="block mb-3">
+          <span class="block text-sm font-medium text-slate-700">Email</span>
+          <input
+            type="text"
+            class="
+              mt-1
+              block
+              w-full
+              px-3
+              py-3
+              border border-slate-300
+              text-sm
+              shadow-sm
+              placeholder-slate-400
+              focus:outline-none focus:border-sky-500 focus:ring-1
+            "
+          />
+        </label>
+      </div>
+      <button
+        class="
+          block
+          bg-blue-500
+          hover:bg-blue-700
+          text-white
+          font-bold
+          py-2
+          px-4
+          block
+          w-full
+        "
+        @click="() => console.log('fetch add new contact')"
+      >
+        Add
+      </button>
     </div>
   </div>
 </template>
 
-
-
-<script>
-export default {
-  emits: ["handlerBack"],
-};
-</script>

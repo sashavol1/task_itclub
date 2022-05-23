@@ -1,9 +1,7 @@
 <template>
-  <div class="container mx-auto bg-white">
+  <div class="container mx-auto bg-white min-h-screen">
     <nav class="bg-teal-400 px-2 sm:px-4 py-2.5 mb-5">
-      <div
-        class="container flex flex-wrap justify-between items-center mx-auto"
-      >
+      <div class="flex flex-wrap justify-between items-center mx-auto">
         <button @click="this.$router.push({ name: 'Payment' })">
           <svg
             class="mr-3 h-6 sm:h-9"
@@ -81,14 +79,27 @@
 
     <div v-if="serverError" data-testid="server-error">{{ serverError }}</div>
 
-    <div
-      v-else-if="contacts.length === 0 && !loading"
-      data-testid="no-contacts"
-    >
-      No contacts!
-    </div>
-
-    <div v-else-if="loading" data-testid="loading">Красивая загрузка</div>
+    <template v-else-if="loading" data-testid="loading">
+      <div
+        class="shadow rounded-md p-4 max-w-sm w-full mx-auto mb-5"
+        v-for="i in loadingSkeletCount"
+        :key="i"
+      >
+        <div class="animate-pulse flex space-x-4">
+          <div class="rounded-full bg-slate-200 h-10 w-10"></div>
+          <div class="flex-1 space-y-6 py-1">
+            <div class="h-2 bg-slate-200 rounded"></div>
+            <div class="space-y-3">
+              <div class="grid grid-cols-3 gap-4">
+                <div class="h-2 bg-slate-200 rounded col-span-2"></div>
+                <div class="h-2 bg-slate-200 rounded col-span-1"></div>
+              </div>
+              <div class="h-2 bg-slate-200 rounded"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
 
     <div v-else>
       <div
@@ -134,12 +145,12 @@
 
 <script>
 export default {
-  emits: ["handlerBack", "handlerAddContact", "update:contact"],
-
   data() {
     return {
       contacts: [],
       serverError: null,
+      loadingSkeletCount: 3,
+      loading: false,
     };
   },
 
@@ -156,13 +167,6 @@ export default {
 
         this.loading = false;
       });
-  },
-
-  methods: {
-    picked(contact) {
-      this.$emit("update:contact", contact.first_name);
-      this.$emit("handlerBack");
-    },
   },
 };
 </script>
