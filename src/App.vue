@@ -1,15 +1,10 @@
 <template>
-  <!-- <main>
+  <main class="mx-auto bg-black min-h-screen">
     <router-view v-slot="{ Component }">
       <transition :name="transitionName">
         <component :is="Component" />
       </transition>
     </router-view>
-  </main> -->
-  <main>
-    <transition :name="transitionName">
-      <router-view />
-    </transition>
   </main>
 </template>
 
